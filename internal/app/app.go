@@ -36,15 +36,15 @@ func Run() {
 		fmt.Fprintln(w, "Hello, Go project structure!")
 	})
 
-	// Пример JSON-ручки: /ping
-	mux.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
-		utils.LogRequest(r)
-		w.Header().Set("Content-Type", "application/json; charset=utf-8")
-		_ = json.NewEncoder(w).Encode(pingResp{
-			Status: "ok",
-			Time:   time.Now().UTC().Format(time.RFC3339),
-		})
-	})
+	// // Пример JSON-ручки: /ping
+	// mux.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
+	// 	utils.LogRequest(r)
+	// 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
+	// 	_ = json.NewEncoder(w).Encode(pingResp{
+	// 		Status: "ok",
+	// 		Time:   time.Now().UTC().Format(time.RFC3339),
+	// 	})
+	// })
 
 	mux.HandleFunc("/fail", func(w http.ResponseWriter, r *http.Request) {
 		utils.LogRequest(r)
